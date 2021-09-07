@@ -18,10 +18,12 @@ if peripheral.find("BigReactors-Reactor") then
         sleep(0.1)
         isActive = reactor.getActive()
         if isActive == true then
+            xText.centerTop("ReactorOS", colors.yellow)
             term.clear()
-            term.setCursorPos(1,1)
+            term.setCursorPos(1,3)
             term.setTextColor(colors.yellow)
             print("Active Reactor Data:")
+            term.setCursorPos(1,5)
             
         else
             if peripheral.find("BigReactors-Reactor") then
