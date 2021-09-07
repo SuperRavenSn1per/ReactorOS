@@ -13,6 +13,7 @@ function centerWrite(text, txtColor, highlight, hlgtColor, yOffset)
   currentTxt = term.getTextColor()
   
   term.setTextColor(txtColor)
+  term.setBackgroundColor(hlgtColor)
   
   term.setCursorPos(math.floor(w / 2 - string.len(text) / 2), math.floor(h / 2) - yOffset)
   write(text)
