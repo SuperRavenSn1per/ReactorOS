@@ -22,16 +22,7 @@ if peripheral.find("BigReactors-Reactor") then
             term.setCursorPos(1,1)
             term.setTextColor(colors.yellow)
             print("Active Reactor Data:")
-            term.setCursorPos(1,3)
-            term.setTextColor(colors.white)
-            fuelTemp = math.floor(reactor.getFuelTemperature())
-            casingTemp = math.floor(reactor.getCasingTemperature())
-            ept = math.floor(reactor.getEnergyProducedLastTick()).." p/t"
-            fclt = math.ceil(reactor.getFuelConsumedLastTick()).." p/t"
-            writeVal("Fuel Temperature",fuelTemp,colors.green)
-            writeVal("Casing Temperature",casingTemp,colors.green)
-            writeVal("Energy",ept,colors.green)
-            writeVal("Fuel Usage",fclt,colors.green)
+            
         else
             if peripheral.find("BigReactors-Reactor") then
                 term.setBackgroundColor(colors.black)
