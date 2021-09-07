@@ -19,7 +19,7 @@ if peripheral.find("BigReactors-Reactor") then
         isActive = reactor.getActive()
         if isActive == true then
             term.clear()
-            xText.centerTop("ReactorOS", colors.yellow)
+            xText.centerTop("-[ ReactorOS ]-", colors.yellow)
             term.setCursorPos(1,3)
             term.setTextColor(colors.yellow)
             write("Active Reactor Data:")
