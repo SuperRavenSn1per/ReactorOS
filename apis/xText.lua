@@ -1,4 +1,4 @@
-function centerWrite(text, txtColor, highlight, hlgtColor, yOffset)
+ function centerWrite(text, txtColor, highlight, hlgtColor, yOffset)
   if txtColor == nil then
     textColor = colors.white
   elseif yOffset == nil then
@@ -36,7 +36,7 @@ end
 function centerTop(text, txtColor)
   currentTxt = term.getTextColor()
   term.setTextColor(txtColor)
-  term.setCursorPos(math.floor(w / 2 - string.len(text) / 2), 0)
+  term.setCursorPos(math.floor(w / 2 - string.len(text) / 2), 1)
   write(text)
   term.setTextColor(currentTxt)
 end
