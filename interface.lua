@@ -17,22 +17,22 @@ if peripheral.find("BigReactors-Reactor") then
     while true do
         sleep(0.1)
         isActive = reactor.getActive()
+        term.clear()
+        xText.centerTop("-=[ ReactorOS ]=-", colors.yellow)
         if isActive == true then
-            term.clear()
-            xText.centerTop("-[ ReactorOS ]-", colors.yellow)
             term.setCursorPos(1,3)
-            term.setTextColor(colors.yellow)
+            term.setTextColor(colors.green)
             write("Active Reactor Data:")
             term.setCursorPos(1,5)
-            
         else
             if peripheral.find("BigReactors-Reactor") then
-                term.setBackgroundColor(colors.black)
-                term.clear()
-                xText.centerWrite(" >REACTOR NOT ACTIVE< ", colors.black, true, colors.red, 0)
-                sleep(0.5)
-                xText.centerWrite("> REACTOR NOT ACTIVE <", colors.black, true, colors.red, 0)
-                sleep(0.5)
+                 term.setCursorPos(1,3)
+                 term.setTextColor(colors.red)
+                 write("Reactor inactive, press [ENTER] to activate")
+                 event, button = os.pullEvent("key")
+                 if button == 28 then
+                     reactor.setActive(true)
+                 end
             else
                 os.reboot()
             end
