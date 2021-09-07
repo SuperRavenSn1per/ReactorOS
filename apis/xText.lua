@@ -38,5 +38,5 @@ function centerTop(text, txtColor)
   term.setTextColor(txtColor)
   term.setCursorPos(math.floor(w / 2 - string.len(text) / 2), 0)
   write(text)
-  term.setTextColor(currentText)
+  term.setTextColor(currentTxt)
 end
