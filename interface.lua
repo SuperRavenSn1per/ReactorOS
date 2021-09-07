@@ -1,52 +1,19 @@
-reactor = peripheral.find("BigReactors-Reactor")
- 
 term.clear()
 term.setCursorPos(1,1)
  
 print("Getting connection...")
- 
-function centerText(text, yOffset, highlight, txtColor, hColor)
-    w,h = term.getSize()
-    oldBgColor = term.getBackgroundColor()
-    oldTxtColor = term.getTextColor()
-    
-    term.setTextColor(txtColor)
-    term.setBackgroundColor(hColor)   
-    term.setCursorPos(math.floor(w / 2 - string.len(text) / 2), math.floor(h / 2 - yOffset))
-    term.write(text)
-    if highlight == true then
-        term.setCursorPos(math.floor(w / 2 - string.len(text) / 2), math.floor(h / 2 - yOffset - 1))
-        for i = 1,string.len(text) do
-            write(" ")
-        end
-        term.setCursorPos(math.floor(w / 2 - string.len(text) / 2), math.floor(h / 2 - yOffset + 1))
-        for i = 1, string.len(text) do
-            write(" ")
-        end
-    end
-    term.setTextColor(oldTxtColor)
-    term.setBackgroundColor(oldBgColor)
-end
- 
-function writeVal(text,val,color)
-    write(text..": ")
-    term.setTextColor(color)
-    write(val)
-    term.setTextColor(colors.white)
-    print("")
-end
- 
-term.clear()
-term.setCursorPos(1,1)
-write("Welcome to ")
-term.setTextColor(colors.yellow)
-write("ReactorOS ")
-term.setTextColor(colors.white)
-print("by SuperRavenSn1per")
-centerText(" ReactorOS ", 0, true, colors.white, colors.yellow)
-sleep(5)
- 
+
 if peripheral.find("BigReactors-Reactor") then
+    reactor = peripheral.find("BigReactors-Reactor")
+    term.clear()
+    term.setCursorPos(1,1)
+    write("Welcome to ")
+    term.setTextColor(colors.yellow)
+    write("ReactorOS ")
+    term.setTextColor(colors.white)
+    print("by SuperRavenSn1per")
+    xText.centerWrite(" ReactorOS ", colors.white, true, colors.yellow, 0)
+    sleep(5)
     while true do
         sleep(0.1)
         isActive = reactor.getActive()
@@ -69,9 +36,9 @@ if peripheral.find("BigReactors-Reactor") then
             if peripheral.find("BigReactors-Reactor") then
                 term.setBackgroundColor(colors.black)
                 term.clear()
-                centerText(" >REACTOR NOT ACTIVE< ", 0, true, colors.black, colors.red)
+                xText.centerWrite(" >REACTOR NOT ACTIVE< ", colors.black, true, colors.red, 0)
                 sleep(0.5)
-                centerText("> REACTOR NOT ACTIVE <", 0, true, colors.black, colors.red)
+                xText.centerWrite("> REACTOR NOT ACTIVE <", colors.black, true, colors.red, 0)
                 sleep(0.5)
             else
                 os.reboot()
@@ -80,7 +47,7 @@ if peripheral.find("BigReactors-Reactor") then
     end 
 elseif peripheral.find("BigReactors-Reactor") == nil then
     term.clear()
-    centerText("> NO REACTOR CONNECTED <", 0, true, colors.black, colors.red)      
+    xText.centerWrite(">CANT FIND REACTOR<", colors.black, true, colors.red, 0)      
     sleep(5)
     os.reboot()
 end
