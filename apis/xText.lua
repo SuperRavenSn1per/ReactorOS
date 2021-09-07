@@ -29,3 +29,9 @@ function centerWrite(text, txtColor, highlight, hlgtColor, yOffset)
     end
   end
 end
+
+function centerTop(text, txtColor)
+  term.setTextColor(txtColor)
+  term.setCursorPos(math.floor(w / 2 - string.len(text) / 2), 0)
+  write(text)
+end
