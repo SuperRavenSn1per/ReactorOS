@@ -40,7 +40,10 @@ if peripheral.find("BigReactors-Reactor") then
     end 
 elseif peripheral.find("BigReactors-Reactor") == nil then
     term.clear()
-    xText.centerWrite(">CANT FIND REACTOR<", colors.black, true, colors.red, 0)      
-    sleep(5)
+    for i = 1,10 do
+     xText.centerWrite(" >CANT FIND REACTOR< ", colors.black, true, colors.red, 0)      
+     xText.centerWrite("> CANT FIND REACTOR <", colors.black, true, colors.red, 0)      
+     sleep(0.5)
+    end
     os.reboot()
 end
