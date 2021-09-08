@@ -24,6 +24,19 @@ if peripheral.find("BigReactors-Reactor") then
             term.setTextColor(colors.green)
             write("Active Reactor Data:")
             term.setCursorPos(1,5)
+            --<<Get Values>>--
+            storedEnergy = reactor.getEnergyStored().." RF"
+            fuelTemp = reactor.getFuelTemperature().." C"
+            casingTemp = reactor.getCasingTempature().." C"
+            fuelAmount = reactor.getFuelAmount().." mB / "..reactor.getFuelAmountMax.." mB"
+            wasteAmount = reactor.getWasteAmount().." mB"
+            rodLevel = reactor.getControlRodLevel()
+            energyProducedLT = reactor.getEnergyProducedLastTick().." mB/pt"
+            fuelLT = reactor.getFuelConsumedLastTick().." mB/pt")
+            ------------------
+            print("Stored Energy: "..storedEnergy)
+            print("Fuel Temperature: "..fuelTemp)
+            print("Casing Temperature: "..casingTemp)
         else
             if peripheral.find("BigReactors-Reactor") then
                  term.setCursorPos(1,3)
