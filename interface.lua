@@ -30,7 +30,6 @@ if peripheral.find("BigReactors-Reactor") then
             casingTemp = reactor.getCasingTempature().." C"
             fuelAmount = reactor.getFuelAmount().." mB / "..reactor.getFuelAmountMax.." mB"
             wasteAmount = reactor.getWasteAmount().." mB"
-            rodLevel = reactor.getControlRodLevel()
             energyProducedLT = reactor.getEnergyProducedLastTick().." mB/pt"
             fuelLT = reactor.getFuelConsumedLastTick().." mB/pt")
             ------------------
