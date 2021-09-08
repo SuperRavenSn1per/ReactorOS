@@ -43,11 +43,11 @@ if peripheral.find("BigReactors-Reactor") then
     end 
 elseif peripheral.find("BigReactors-Reactor") == nil then
     term.clear()
-    for i = 1,5 do
+    for i = 1,2 do
      xText.centerWrite(" >REACTOR NOT FOUND< ", colors.black, true, colors.red, 0)          
      sleep(0.5)
      xText.centerWrite("> REACTOR NOT FOUND <", colors.black, true, colors.red, 0)   
      sleep(0.5)
     end
-    os.reboot()
+    shell.run("interface.lua")
 end
