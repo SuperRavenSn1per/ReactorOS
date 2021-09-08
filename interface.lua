@@ -31,7 +31,7 @@ if peripheral.find("BigReactors-Reactor") then
             fuelAmount = reactor.getFuelAmount().." mB / "..reactor.getFuelAmountMax.." mB"
             wasteAmount = reactor.getWasteAmount().." mB"
             energyProducedLT = reactor.getEnergyProducedLastTick().." mB/pt"
-            fuelLT = reactor.getFuelConsumedLastTick().." mB/pt")
+            fuelLT = reactor.getFuelConsumedLastTick().." mB/pt"
             ------------------
             print("Stored Energy: "..storedEnergy)
             print("Fuel Temperature: "..fuelTemp)
