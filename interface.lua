@@ -1,4 +1,4 @@
-term.clear()
+ term.clear()
 term.setCursorPos(1,1)
  
 print("Getting connection...")
@@ -27,8 +27,8 @@ if peripheral.find("BigReactors-Reactor") then
             --<<Get Values>>--
             storedEnergy = reactor.getEnergyStored().." RF"
             fuelTemp = reactor.getFuelTemperature().." C"
-            casingTemp = reactor.getCasingTempature().." C"
-            fuelAmount = reactor.getFuelAmount().." mB / "..reactor.getFuelAmountMax.." mB"
+            casingTemp = reactor.getCasingTemperature().." C"
+            fuelAmount = reactor.getFuelAmount().." mB / "..reactor.getFuelAmountMax().." mB"
             wasteAmount = reactor.getWasteAmount().." mB"
             energyProducedLT = reactor.getEnergyProducedLastTick().." mB/pt"
             fuelLT = reactor.getFuelConsumedLastTick().." mB/pt"
